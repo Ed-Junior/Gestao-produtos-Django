@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+
+{% block main %}
+
+<h1> Bem vindo </h1><br>
+
+
+
+
+
+<h2>Lista de Produtos Disponiveis</h2>
+
+	<div class="container">
+		<ul >
+			{% for produtos in produtos %}
+
+				<li class="list-group-item">  {{produtos.name|title}}  </li>
+
+
+			{% endfor %}
+
+		</ul>
+	</div>
+
+{% endblock %}

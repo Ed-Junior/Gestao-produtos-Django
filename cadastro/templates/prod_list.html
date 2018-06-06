@@ -1,0 +1,39 @@
+
+{% extends 'base.html' %}
+
+
+{% block title %} Administração  {% endblock %}
+
+{% block main %}
+<h3> Olá {{ user.username|title}} </h3>
+ <ul class="list-group">
+
+		{% for produtos in produtos %}
+
+
+		<li  class="list-group-item">
+
+				<a href="{% url 'prod_up' produtos.id %}" > {{produtos.name|title}}</a>
+				<a href="{% url 'delete_prod' produtos.id %}" class="delete-btn btn btn-danger"  > Delete</a>
+		</li>
+
+
+			{% endfor %}
+
+
+
+		  </ul>
+
+		<a class="list-group-item active"  href="{% url 'new_prod' %}">Novo Produto</a>
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
